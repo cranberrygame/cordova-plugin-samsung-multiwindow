@@ -32,6 +32,33 @@ multiwindow.SPLITWINDOW_ZONE_B = 1 << 1;
  */
 multiwindow.SPLITWINDOW_ZONE_FULL = 1 << 2;
 
+//cranberrygame start
+multiwindow.openMultiWindow = function(url) {
+		
+	multiwindow.isSupported('freestyle', function(result){
+		//alert('supported');
+		var inputOptions = {};
+		inputOptions.action = 'action_view';//action_main, action_view
+		inputOptions.windowType = 'freestyle';//freestyle, splitstyle
+		inputOptions.scaleInfo = '60';
+		inputOptions.dataUri = url;		
+		//inputOptions.packageName = 'com.sec.android.app.sbrowser';
+		//inputOptions.activity = 'com.sec.android.app.sbrowser.SBrowserMainActivity';
+		multiwindow.createMultiWindow(inputOptions, function(result){}, function(error){});
+	}, function(error){
+		//alert('not supported');
+		if(url.indexOf("market://")!=-1 || url.indexOf("http://play.google.com")!=-1 || url.indexOf("https://play.google.com")!=-1)
+			//http://stackoverflow.com/questions/16431258/android-wont-open-google-play-links-from-javascript-in-web-app
+			//window.location = self.url; //x
+			//window.open(self.url, "_blank"); //x
+			window.open(url,"_system");
+		else{
+			window.open(url, "_blank");
+		}		
+	});
+}
+//cranberrygame end
+
 /**
  * Checks MultiWindow support on the device.
  *

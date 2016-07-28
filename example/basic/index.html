@@ -4,31 +4,7 @@
 </head>
 <body>
 
-<script>
-
-document.addEventListener("deviceready", function(){
-
-}, false);
-	
-function moreApps(moreAppsUrl) {
-	samsung.multiwindow.isSupported('freestyle', function(result){
-		//alert('supported');
-		var inputOptions = {};
-		inputOptions.action = 'action_view';//action_main, action_view
-		inputOptions.windowType = 'freestyle';//freestyle, splitstyle
-		inputOptions.scaleInfo = '60';
-		inputOptions.dataUri = moreAppsUrl;		
-		//inputOptions.packageName = 'com.sec.android.app.sbrowser';
-		//inputOptions.activity = 'com.sec.android.app.sbrowser.SBrowserMainActivity';
-		samsung.multiwindow.createMultiWindow(inputOptions, function(result){}, function(error){});
-	}, function(error){
-		//alert('not supported');
-	});
-}
-
-</script>
-
-<p><button onclick="moreApps('https://play.google.com/store/apps/developer?id=cranberrygame');">moreApps</button></p>
+<p><button onclick="samsung.multiwindow.openMultiWindow('https://play.google.com/store/apps/developer?id=cranberrygame');">moreApps</button></p>
 
 </body>
 </html>

@@ -4,7 +4,7 @@ Cordova Samsung MultiWindow plugin
 # Overview #
 Show Samsung MultiWindow.
  
-[android] [cordova cli] [xdk] [phonegap build service]
+[android] [cordova cli] [xdk] [cocoon] [phonegap build service]
 
 This is open source cordova plugin.
 
@@ -14,8 +14,10 @@ You can see Cordova Plugins in one page: http://cranberrygame.github.io?referrer
 ```
 # Change log #
 ```c
+1.1.4 Updated MultiWindow SDK 1.3.2 (May 26, 2016)
 ```
 # Install plugin #
+
 
 ## Cordova cli ##
 https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@6.0.0
@@ -48,27 +50,7 @@ Now all the native plugins are installed automatically: https://plus.google.com/
 # API #
 ```javascript
 
-document.addEventListener("deviceready", function(){
-
-}, false);
-	
-function moreApps(moreAppsUrl) {
-	samsung.multiwindow.isSupported('freestyle', function(result){
-		//alert('supported');
-		var inputOptions = {};
-		inputOptions.action = 'action_view';//action_main, action_view
-		inputOptions.windowType = 'freestyle';//freestyle, splitstyle
-		inputOptions.scaleInfo = '60';
-		inputOptions.dataUri = moreAppsUrl;		
-		//inputOptions.packageName = 'com.sec.android.app.sbrowser';
-		//inputOptions.activity = 'com.sec.android.app.sbrowser.SBrowserMainActivity';
-		samsung.multiwindow.createMultiWindow(inputOptions, function(result){}, function(error){});
-	}, function(error){
-		//alert('not supported');
-	});
-}
-
-moreApps('https://play.google.com/store/apps/developer?id=cranberrygame');
+samsung.multiwindow.openMultiWindow('https://play.google.com/store/apps/developer?id=cranberrygame');
 
 ```
 # Examples #
@@ -76,9 +58,14 @@ moreApps('https://play.google.com/store/apps/developer?id=cranberrygame');
 
 # Test #
 
+<img src="https://raw.githubusercontent.com/cranberrygame/cordova-plugin-samsung-multiwindow/master/doc/screenshot.png"><br>
+
 # Useful links #
 
 Cordova Plugins<br>
 http://cranberrygame.github.io?referrer=github
 
 # Credits #
+
+https://seap.samsung.com/sdk/cordova-plugins
+http://developer.samsung.com/galaxy#multiwindow
