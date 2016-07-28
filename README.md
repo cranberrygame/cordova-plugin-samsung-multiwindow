@@ -67,5 +67,5 @@ http://cranberrygame.github.io?referrer=github
 
 # Credits #
 
-https://seap.samsung.com/sdk/cordova-plugins
+https://seap.samsung.com/sdk/cordova-plugins<br>
 http://developer.samsung.com/galaxy#multiwindow
