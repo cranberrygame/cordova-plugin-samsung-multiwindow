@@ -1,0 +1,37 @@
+{
+  "name": "cordova-plugin-samsung-multiwindow",
+  "version": "1.1.4",
+  "description": "Samsung MultiWindow Plugin",
+  "cordova": {
+    "id": "cordova-plugin-samsung-multiwindow",
+    "platforms": [
+      "android",
+      "ios",
+      "wp8"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cranberrygame/cordova-plugin-samsung-multiwindow.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "samsung",
+    "amultiwindow",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "cranberrygame",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cranberrygame/cordova-plugin-samsung-multiwindow/issues"
+  },
+  "homepage": "https://github.com/cranberrygame/cordova-plugin-samsung-multiwindow#readme"
+}
